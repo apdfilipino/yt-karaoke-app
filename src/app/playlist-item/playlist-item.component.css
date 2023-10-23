@@ -1,0 +1,11 @@
+.playlist-card {
+    margin: 10px;
+    width: 300px;
+    height: 200px
+}
+
+.baseline {
+    display: block;
+    justify-self: baseline;
+    align-self: center;
+}

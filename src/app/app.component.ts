@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Video } from './model/video';
 
 @Component({
   selector: 'app-root',

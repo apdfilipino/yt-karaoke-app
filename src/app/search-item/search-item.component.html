@@ -1,0 +1,10 @@
+<mat-card class="example-card">
+    <mat-card-header>
+        <mat-card-title color="primary">{{ video.title }}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="video.thumbnailUrl" width="360px" height="202px">
+    <mat-card-actions>
+      <button mat-button (click)="addToQueue()">Add to Queue</button>
+      <button mat-button (click)="priorityAdd()">Queue Next</button>
+    </mat-card-actions>
+</mat-card>

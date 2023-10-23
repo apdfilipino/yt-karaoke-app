@@ -1,0 +1,11 @@
+<mat-card class="playlist-card">
+    <mat-card-header>{{ video.title }}</mat-card-header>
+    <mat-card-actions class="baseline">
+      <button mat-button (click)="remove()"><mat-icon>close</mat-icon></button>
+      <button *ngIf="!first" mat-button (click)="play()"><mat-icon>play_arrow</mat-icon></button>
+      <button *ngIf="!first && index !== 1" mat-button (click)="moveUp()"><mat-icon>skip_previous</mat-icon></button>
+      <button *ngIf="!last && !first" mat-button (click)="moveDown()"><mat-icon>skip_next</mat-icon></button>
+    </mat-card-actions>
+</mat-card>
+  
+

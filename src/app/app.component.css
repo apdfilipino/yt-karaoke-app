@@ -1,0 +1,39 @@
+.container {  
+    display: grid;
+    grid-template-columns: 30vw 70vw;
+    grid-template-rows: 25vh 25vh 25vh 25vh;
+    grid-auto-columns: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "searchBox karaoke"
+      "search karaoke"
+      "search karaoke"
+      "search playlist";
+    overflow-x: hidden;
+    overflow-y: visible;
+}
+  
+.search { 
+    grid-area: search;
+    background-color: "primary";
+}
+  
+.karaoke { 
+    grid-area: karaoke; 
+    background-color: "primary"; 
+}
+  
+.playlist { 
+    grid-area: playlist; 
+    background-color: pink;
+}
+
+.searchBox { 
+    grid-area: searchBox; 
+    background-color: pink;
+}
+  
+.whiteFont {
+    color: "white"
+}

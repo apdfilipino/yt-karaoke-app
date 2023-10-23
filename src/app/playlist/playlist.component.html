@@ -1,0 +1,12 @@
+<div class="playlist-container" >
+    <app-playlist-item 
+        *ngFor="let video of videos | async; let i = index; let f = first; let l = last" 
+        [video]="video" [first]="f" 
+        [last]="l" 
+        [index]="i" 
+        (removeClick)="remove($event, i)"
+        (moveUpClick)="move($event, i, 1)"
+        (moveDownClick)="move($event, i, -1)"
+        (playClick)="play($event, i)"
+    ></app-playlist-item>
+</div>

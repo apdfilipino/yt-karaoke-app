@@ -1,0 +1,12 @@
+.search-container {
+    width: 100%;
+    height: 100%;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+}
+
+.search-box {
+    margin: 15px
+}
