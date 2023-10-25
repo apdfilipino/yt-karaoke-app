@@ -1,7 +1,7 @@
 <div class="search-box-container">
     <mat-form-field class="search-box">
         <mat-label>Search</mat-label>
-        <input matInput type="text" [(ngModel)]="value">
+        <input matInput type="text" [(ngModel)]="value" (keydown.enter)="search()">
     </mat-form-field>
     <button matSuffix mat-icon-button aria-label="Search" (click)="search()">
         <mat-icon>search</mat-icon>

@@ -39,6 +39,13 @@ export class PlayerComponent implements OnInit {
     }));
   }
 
+  stateChangeHandler(event: any){
+    if (event.data === YT.PlayerState.ENDED) {
+      console.log(event);
+      this.youtubeService.next();
+    }
+  }
+
   private resetElement() {
     if(this.domElement) {
       this.domElement.remove();

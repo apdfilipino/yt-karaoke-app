@@ -5,8 +5,9 @@ export enum VideoActionTypes {
     Queue = "[Video] Queue",
     Remove = "[Video] Remove",
     SetActive = "[Video] SetActive",
-    PlayNext = "[Video] PlayNext",
-    Move = "[Video] Move"
+    PlayIndex = "[Video] PlayIndex",
+    Move = "[Video] Move",
+    PlayNext = "[Video] PlayNext"
 }
 
 export interface VideoProps { 
@@ -66,9 +67,13 @@ export class Move extends VideoActionWithProps implements Action {
     }
 }
 
-export class Play extends VideoActionWithProps implements Action {
-    type = VideoActionTypes.PlayNext;
+export class PlayIndex extends VideoActionWithProps implements Action {
+    type = VideoActionTypes.PlayIndex;
     constructor(props: VideoProps) {
         super(props);
     }
+}
+
+export class PlayNext implements Action {
+    type = VideoActionTypes.PlayNext;
 }

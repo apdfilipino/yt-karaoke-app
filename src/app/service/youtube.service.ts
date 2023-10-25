@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { Video } from '../model/video';
 import { SetList } from '../video-store/search.actions';
 import { SearchListState } from '../video-store/search.reducers';
-import { Move, Play, Queue, Remove } from '../video-store/video.actions';
+import { Move, PlayIndex, PlayNext, Queue, Remove } from '../video-store/video.actions';
 import { VideoState } from '../video-store/video.reducers';
 
 @Injectable({
@@ -47,6 +47,10 @@ export class YoutubeService {
   }
 
   public play(video: Video, index: number) {
-    this.store.dispatch(new Play({ video, removeIndex: index }));
+    this.store.dispatch(new PlayIndex({ video, removeIndex: index }));
+  }
+
+  public next() {
+    this.store.dispatch(new PlayNext());
   }
 }

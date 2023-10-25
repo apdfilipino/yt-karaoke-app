@@ -53,7 +53,7 @@ export function videosReducer(state = videosInitialState, action: Action) {
             }
             return stateCopy;
         }
-        case VideoActionTypes.PlayNext: {
+        case VideoActionTypes.PlayIndex: {
             const index = (<VideoPropsAction>action).removeIndex ?? 0;
             const playlistCopy = [ ...stateCopy.playlist ];
             const playNext = { ...playlistCopy[index] };
@@ -72,6 +72,20 @@ export function videosReducer(state = videosInitialState, action: Action) {
             playlistCopy[index] = newIndex;
             playlistCopy[index - upDown] = present;
             stateCopy.playlist = [ ...playlistCopy ];
+            return stateCopy;
+        }
+        case VideoActionTypes.PlayNext: {
+            const [ done, ...remaining ] = stateCopy.playlist;
+            stateCopy.playlist = [ ...remaining ];
+            if (stateCopy.playlist.length > 0) {
+                stateCopy.activeVideo = stateCopy.playlist[0];
+            } else {
+                stateCopy.activeVideo = {
+                    videoId: '',
+                    thumbnailUrl: '',
+                    title: ''
+                };
+            }
             return stateCopy;
         }
         default: return state;
